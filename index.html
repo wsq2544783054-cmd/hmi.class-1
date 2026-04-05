@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>팝업 해제 실험물 - 스크롤 묻힘</title>
+
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -11,14 +12,14 @@
     font-family: -apple-system, sans-serif;
     background: #f5f5f5;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
   }
 
   .experiment-wrap {
     width: 100%;
-    max-width: 1000px;
+    max-width: 420px;
     background: #fff;
     position: relative;
     overflow: hidden;
@@ -40,11 +41,11 @@
 
   .shopping-bg {
     width: 100%;
-    height: 600px;
+    height: 100vh;
     background-image: url("쇼핑몰배경이미지.png");
     background-size: cover;
     background-position: top center;
-    overflow-y: scroll;
+    overflow-y: auto;
     position: relative;
   }
 
@@ -54,7 +55,10 @@
 
   .popup-overlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
@@ -72,8 +76,8 @@
 
   .popup-box {
     position: relative;
-    width: 420px;
-    max-width: 90%;
+    width: 90%;
+    max-width: 350px;
   }
 
   .popup-box img {
@@ -98,7 +102,18 @@
     white-space: nowrap;
   }
 </style>
+
+<!-- ✅ Clarity 代码 -->
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "w73nf785cz");
+</script>
+
 </head>
+
 <body>
 
 <div class="experiment-wrap">
@@ -108,6 +123,7 @@
   </div>
 
   <div class="shopping-bg" id="shoppingBg">
+
     <div class="scroll-spacer"></div>
 
     <div class="popup-overlay" id="popupOverlay">
@@ -117,6 +133,7 @@
     </div>
 
     <div class="hint">↓ 아래로 스크롤하면 팝업이 사라집니다</div>
+
   </div>
 
 </div>
